@@ -10,9 +10,9 @@ public interface PortfolioService {
 
     public List<Portfolio> getPortfolioList();
 
-    public Portfolio getPortfolioById(int id);
+    public Portfolio getPortfolioById(PortfolioId id);
 
     public Portfolio updatePortfolio(Portfolio newPortfolio, PortfolioId id);
 
-    public void deletePortfolioById(int id);
+    public void deletePortfolioById(PortfolioId id);
 }

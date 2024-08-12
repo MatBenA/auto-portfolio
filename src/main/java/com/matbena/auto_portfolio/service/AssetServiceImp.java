@@ -13,26 +13,33 @@ public class AssetServiceImp implements AssetService{
 
     @Override
     public Asset createAsset(Asset asset) {
-        return null;
+        return assetRepository.save(asset);
     }
 
     @Override
     public List<Asset> getAssetList() {
-        return List.of();
+        return assetRepository.findAll();
     }
 
     @Override
     public Asset getAssetById(int id) {
-        return null;
+        return assetRepository.findById(id).orElse(null);
     }
 
     @Override
     public Asset updateAsset(Asset newAsset, int id) {
-        return null;
+        Asset updateAsset = assetRepository.findById(id).orElse(null);
+
+        assert updateAsset != null;
+        updateAsset.setSymbol(newAsset.getSymbol());
+        updateAsset.setPrice(newAsset.getPrice());
+        updateAsset.setAssetType(newAsset.getAssetType());
+
+        return assetRepository.save(updateAsset);
     }
 
     @Override
     public void deleteAssetById(int id) {
-
+        assetRepository.deleteById(id);
     }
 }

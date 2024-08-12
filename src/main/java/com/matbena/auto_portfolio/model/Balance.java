@@ -2,6 +2,7 @@ package com.matbena.auto_portfolio.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,7 +14,9 @@ public class Balance {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
+    @CreationTimestamp
     private LocalDateTime dateTime;
+
     private BigDecimal budgetARS;
     private BigDecimal budgetUSD;
     private float dailyVariation;
