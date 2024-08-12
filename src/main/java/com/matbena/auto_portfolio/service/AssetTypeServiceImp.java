@@ -3,9 +3,11 @@ package com.matbena.auto_portfolio.service;
 import com.matbena.auto_portfolio.model.AssetType;
 import com.matbena.auto_portfolio.repository.AssetTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AssetTypeServiceImp implements AssetTypeService{
     @Autowired
     private AssetTypeRepository assetTypeRepository;

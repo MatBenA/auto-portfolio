@@ -4,9 +4,11 @@ import com.matbena.auto_portfolio.model.Portfolio;
 import com.matbena.auto_portfolio.model.PortfolioId;
 import com.matbena.auto_portfolio.repository.PortfolioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PortfolioServiceImp implements PortfolioService{
     @Autowired
     private PortfolioRepository portfolioRepository;

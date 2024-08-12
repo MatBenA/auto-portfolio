@@ -3,9 +3,11 @@ package com.matbena.auto_portfolio.service;
 import com.matbena.auto_portfolio.model.Balance;
 import com.matbena.auto_portfolio.repository.BalanceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BalanceServiceImp implements BalanceService{
     @Autowired
     private BalanceRepository balanceRepository;
