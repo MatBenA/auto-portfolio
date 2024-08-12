@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/daily-balances")
-public class BalanceController {
+public class DailyBalanceController {
 
     @Autowired
     BalanceServiceImp balanceService;
