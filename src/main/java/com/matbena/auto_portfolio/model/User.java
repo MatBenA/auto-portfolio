@@ -18,7 +18,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user")
-    private List<Balance> balanceList;
+    private List<DailyBalance> dailyBalanceList;
 
     @OneToMany(mappedBy = "user")
     private List<Portfolio> portfolioList;

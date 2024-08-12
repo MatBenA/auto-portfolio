@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Balance {
+public class DailyBalance {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
@@ -17,9 +17,8 @@ public class Balance {
     @CreationTimestamp
     private LocalDateTime dateTime;
 
-    private BigDecimal budgetARS;
-    private BigDecimal budgetUSD;
-    private float dailyVariation;
+    private BigDecimal variationArs;
+    private BigDecimal variationUsd;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

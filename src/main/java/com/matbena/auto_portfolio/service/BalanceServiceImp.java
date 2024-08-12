@@ -1,6 +1,6 @@
 package com.matbena.auto_portfolio.service;
 
-import com.matbena.auto_portfolio.model.Balance;
+import com.matbena.auto_portfolio.model.DailyBalance;
 import com.matbena.auto_portfolio.repository.BalanceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,30 +13,29 @@ public class BalanceServiceImp implements BalanceService{
     private BalanceRepository balanceRepository;
 
     @Override
-    public Balance createBalance(Balance balanceType) {
-        return balanceRepository.save(balanceType);
+    public DailyBalance createBalance(DailyBalance dailyBalanceType) {
+        return balanceRepository.save(dailyBalanceType);
     }
 
     @Override
-    public List<Balance> getBalanceList() {
+    public List<DailyBalance> getBalanceList() {
         return balanceRepository.findAll();
     }
 
     @Override
-    public Balance getBalanceById(int id) {
+    public DailyBalance getBalanceById(int id) {
         return balanceRepository.findById(id).orElse(null);
     }
 
     @Override
-    public Balance updateBalance(Balance newBalance, int id) {
-        Balance updateBalance = balanceRepository.findById(id).orElse(null);
+    public DailyBalance updateBalance(DailyBalance newDailyBalance, int id) {
+        DailyBalance updateDailyBalance = balanceRepository.findById(id).orElse(null);
 
-        assert updateBalance != null;
-        updateBalance.setBudgetARS(newBalance.getBudgetARS());
-        updateBalance.setBudgetUSD(newBalance.getBudgetUSD());
-        updateBalance.setDailyVariation(newBalance.getDailyVariation());
+        assert updateDailyBalance != null;
+        updateDailyBalance.setVariationArs(newDailyBalance.getVariationArs());
+        updateDailyBalance.setVariationUsd(newDailyBalance.getVariationUsd());
 
-        return balanceRepository.save(updateBalance);
+        return balanceRepository.save(updateDailyBalance);
     }
 
     @Override

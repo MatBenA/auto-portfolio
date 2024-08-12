@@ -1,17 +1,17 @@
 package com.matbena.auto_portfolio.service;
 
-import com.matbena.auto_portfolio.model.Balance;
+import com.matbena.auto_portfolio.model.DailyBalance;
 
 import java.util.List;
 
 public interface BalanceService {
-    public Balance createBalance(Balance balance);
+    public DailyBalance createBalance(DailyBalance dailyBalance);
 
-    public List<Balance> getBalanceList();
+    public List<DailyBalance> getBalanceList();
 
-    public Balance getBalanceById(int id);
+    public DailyBalance getBalanceById(int id);
 
-    public Balance updateBalance(Balance newBalance, int id);
+    public DailyBalance updateBalance(DailyBalance newDailyBalance, int id);
 
     public void deleteBalanceById(int id);
 }
