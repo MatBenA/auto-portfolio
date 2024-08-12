@@ -1,5 +1,6 @@
 package com.matbena.auto_portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,5 +22,6 @@ public class User {
     private List<DailyBalance> dailyBalanceList;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private List<Portfolio> portfolioList;
 }
